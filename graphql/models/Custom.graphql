@@ -1,0 +1,14 @@
+extend type Query {
+    hello: String!
+
+    greet(name: String!): String
+
+}
+
+extend type Mutation {
+
+    customUser(
+        email: String!
+        name: String!
+    ): User! @field(resolver: "CustomMutation@resolve")
+}
